@@ -1,9 +1,7 @@
 <div class="container">
-    <item></item>
-    <item></item>
-    <item></item>
-    <item></item>
-    <item></item>
-</div>
-
-
+    <item
+      *ngFor="let product of productService.listOfProducts"
+      [product]="product"
+    ></item>
+  </div>
+  

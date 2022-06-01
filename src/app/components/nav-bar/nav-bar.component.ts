@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'nav-bar',
@@ -7,9 +8,11 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 })
 export class NavBarComponent {
   @Input() title = '';
-  constructor() { }
+  constructor(private productService : ProductsService) { }
 
   ngOnInit(): void {
   }
-
+onSearch(text : string){
+  this.productService.filterProducts(text);
+}
 }
